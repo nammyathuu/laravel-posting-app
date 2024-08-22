@@ -57,6 +57,13 @@ class PostController extends Controller
           }
   
           return view('posts.edit', compact('post'));
+
+          $request->validate([
+            'title' => 'required|max:40' ,
+            'content' =>'required|max:200'
+        ]) ;
+
+        return redirect("/posts") ;  
       }
 
       // 更新機能
