@@ -71,13 +71,6 @@ class PostController extends Controller
          $post->save();
  
          return redirect()->route('posts.show', $post)->with('flash_message', '投稿を編集しました。');
-
-         $request->validate([
-            'title' => 'required|max:40' ,
-            'content' =>'required|max:200'
-        ]) ;
-
-        return redirect("/posts") ;  
      }
 
       // 削除機能
